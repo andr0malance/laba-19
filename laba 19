@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -14,12 +15,11 @@ public class Main {
                 System.out.println("Введите ещё " + (kolvo - i) + " элемент(а)(ов) массива");
                     masiv[i] = sc.nextInt();
             }
-        System.out.println("Массив до сортировки по возрастанию:");
-        System.out.println(Arrays.toString(masiv));
 
+        System.out.println("Массив до сортировки : " + Arrays.toString(masiv));
+        Arrays.sort(masiv, Comparator.comparingInt(a -> a));
+        System.out.println("Массив после сортировки по возрастанию: " + Arrays.toString(masiv));
         Arrays.sort(masiv, (a, b) -> b - a);
-
-        System.out.println("Массив после сортировки по убыванию:");
-        System.out.println(Arrays.toString(masiv));
+        System.out.println("Массив после сортировки по убыванию: " + Arrays.toString(masiv));
     }
 }
